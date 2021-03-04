@@ -1,0 +1,22 @@
+SELECT p.name publisher, COUNT(*) book_count FROM books b INNER JOIN publishers p ON p.publisher_id=b.publisher_id GROUP BY p.name ORDER BY publisher;
+from Abhiram K (External) to everyone:    3:39 PM
+SELECT publishers.name publisher, DECIMAL(AVG(rating), 5, 2) avg_rating, COUNT(*) book_count FROM books INNER JOIN publishers ON publishers.publisher_id = books.publisher_id GROUP BY publishers.name ORDER BY publisher;
+from Akhila BodduIBM (External) to everyone:    3:40 PM
+we can use limit in this query sir?
+from Akhila BodduIBM (External) to everyone:    3:40 PM
+okay
+from Abhiram K (External) to everyone:    3:42 PM
+SELECT publishers.name publisher, MIN(rating) min_rating, MAX(rating) max_rating FROM books INNER JOIN publishers ON publishers.publisher_id=books.publisher_id GROUP BY publishers.name ORDER BY publisher LIMIT 10;
+from Abhiram K (External) to everyone:    3:44 PM
+SELECT publishers.name publisher, SUM(total_pages) total_pages FROM books INNER JOIN publishers ON publishers.publisher_id=books.publisher_id GROUP BY publishers.name LIMIT 10;
+from Abhiram K (External) to everyone:    3:47 PM
+SELECT p.name publisher, COUNT(*) book_count FROM books b INNER JOIN publishers p ON p.publisher_id=b.publisher_id GROUP BY p.name HAVING COUNT(*) > 40 ORDER BY book_count;
+from Abhiram K (External) to everyone:    3:48 PM
+CREATE TABLE dupes (id INT NOT NULL PRIMARY KEY, letter CHAR(1) NOT NULL);
+from Abhiram K (External) to everyone:    3:50 PM
+
+
+
+SELECT letter, COUNT(letter) value_count FROM dupes GROUP BY letter HAVING COUNT(letter) > 1;
+
+
